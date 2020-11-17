@@ -1,4 +1,4 @@
-## 如果觉得还有点用，麻烦用一下我的邀请码631441，有加成卡15张，我也有推广收入。
+## 如果觉得还有点用，麻烦用一下我的邀请码463386，我也有推广收入。
 
 ### 迄今为止最小的甜糖星愿镜像
 
@@ -10,7 +10,7 @@ ip link set eth0 promisc on
 ```
 创建网络（自行替换网关以及网段）
 ```
-docker network create -d macvlan --subnet=192.168.2.0/24 --gateway=192.168.2.88 -o parent=eth0 -o macvlan_mode=bridge macnet
+docker network create -d macvlan --subnet=192.168.7.0/24 --gateway=192.168.7.1 -o parent=eth0 -o macvlan_mode=bridge macnet
 ```
 运行容器（自行替换路径、IP以及可选替换dns）
 
@@ -18,7 +18,7 @@ docker network create -d macvlan --subnet=192.168.2.0/24 --gateway=192.168.2.88 
 docker run -itd \
   -v /mnt/data/ttnode:/mnts \
   --name ttnode \
-  --net=macnet --ip=192.168.2.2 --dns=114.114.114.114 --mac-address C2:F2:9C:C5:B2:94 \
+  --net=macnet --ip=192.168.7.1 --dns=114.114.114.114 --mac-address C2:F2:9C:C5:B2:94 \
   --privileged=true \
   --restart=always \
   ericwang2006/ttnode
